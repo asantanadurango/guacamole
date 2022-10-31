@@ -1,0 +1,21 @@
+<ul>
+    <% Object.entries(products).forEach(function([name, subs]) { %>
+       <h3> Producto: <%= name %> </h3>
+       <% subs.forEach(function({peso, ref}) { %>
+        <section class='d-flex'>
+            <h6 class="mx-2">Peso:<%= peso%> </h6>
+            <h6 class="mx-2">Ref:<%= ref%> </h6>
+        </section>
+    <% }); %> 
+    <% }); %> 
+   </ul>
+
+
+<!-- Object.entries(products).forEach(pr => {
+    const [name, subs] = pr
+    console.log(name);
+    subs.forEach(sub => {
+        console.log('peso', sub.peso);
+        console.log('ref', sub.ref);
+    })
+}) -->
