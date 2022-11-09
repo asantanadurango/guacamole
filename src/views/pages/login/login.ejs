@@ -12,19 +12,40 @@
             <div class="row justify-content-center">
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4"><%= title %> </p>
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">CREATE NEW PRODUCT</p>
 
-                <form>
+                <form action="" class="formulario" id="formularioProductos">
                     <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Your Email</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                      <input type="text" class="form-control" name="nombre" aria-describedby="emailHelp" required>
                 
                     </div>
+
                     <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">Your Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1">
+                      <label for="exampleInputEmail1" class="form-label">Precio</label>
+                      <input type="number" class="form-control" name="precio" aria-describedby="emailHelp" required>
+                
                     </div>
-                    <button type="submit" class="btn btn-primary">Log in</button>
+
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Referencia</label>
+                      <input type="email" class="form-control" name="referencia" aria-describedby="emailHelp" required>
+                
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Cantidad</label>
+                      <input type="email" class="form-control" name="cantidad" aria-describedby="emailHelp" required>
+                
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Descripcion</label>
+                      <input type="email" class="form-control" name="descripcion" aria-describedby="emailHelp" required>
+                
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Create Product</button>
                   </form>
 
               </div>
@@ -32,6 +53,7 @@
 
                 <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-acceder-al-perfil-movil_114360-83.jpg?w=500"
                   class="img-fluid" alt="Sample image">
+                  
 
               </div>
             </div>
