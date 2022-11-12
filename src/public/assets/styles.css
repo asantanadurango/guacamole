@@ -1,0 +1,21 @@
+
+input{
+    width: 90%
+    
+}
+
+input.incorrecto{border: 2px solid red;
+    border-radius: 4px;}
+
+ 
+label.alert{
+    color: red;
+    visibility: hidden;
+    
+    
+    
+}
+label.visible{
+    visibility: visible;
+    
+}
