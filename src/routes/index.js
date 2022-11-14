@@ -12,8 +12,12 @@ import { controlRoute } from './control/controlRoute.js';
 // Products
 import { productsRouter } from './products/productsRouter.js';
 
+// Users
+import { usersRouter } from './users/usersRouter.js';
+
 export {
     indexRoute,
     controlRoute, 
-    productsRouter
+    productsRouter,
+    usersRouter
 }
