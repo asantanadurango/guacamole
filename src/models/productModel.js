@@ -2,16 +2,33 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const PresentationSchema = new Schema({
-    price: Number,
-    weight: String,
-    ref:String
-
-});
+    price: {
+        type: Number,
+        required: true,
+    },
+    weight: {
+        type: String,
+        required: true,
+    },
+    ref:{
+        type: String,
+        required: true,
+    },
+    
+}, {_id:false});
 
 const ProductSchema = new Schema({
-    name: String,
-    presentations: [PresentationSchema],
-
+    name: {
+        type: String,
+        required: true,
+        unique:true
+    },
+    description:String,
+    presentations: [
+       PresentationSchema
+    ],
+}, {
+    versionKey:false
 });
 
 export const ProductModel = mongoose.model('products', ProductSchema)
