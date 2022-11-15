@@ -12,7 +12,7 @@ const PresentationSchema = new Schema({
     },
     ref:{
         type: String,
-        required: true,
+        required: false,
     },
     
 }, {_id:false});

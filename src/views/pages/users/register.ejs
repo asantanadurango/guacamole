@@ -1,10 +1,13 @@
 <!-- HEAD -->
+<link href="/assets/styles.css" rel="stylesheet" type="text/css"/>
 <%- include('../../partials/head/head.ejs') %> 
 <!-- NAVBAR -->
 <%- include('../../partials/navbar/navbar.ejs') %> 
 
         <div class="container">
-          <h1>Register user</h1>
+          <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+            REGISTER NEW USER
+          </p>
           <div class="row d-flex justify-content-center align-items-center">
             <div class="col-lg-12 col-xl-11">
               <div class="card text-black" style="border-radius: 25px;">
@@ -12,58 +15,66 @@
                   <div class="row justify-content-center">
                     <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
       
-                      <form class="mx-1 mx-md-4">
+                      <form class="mx-1 mx-md-4" id="formularioClientes">
       
-                        <div class="d-flex flex-row align-items-center mb-2">
+                        <div class="d-flex flex-row align-items-center mb-0">
                           <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                               <label class="form-label" for="name">Name</label>
-                            <input type="text" id="name" class="form-control" />
+                            <input type="text" id="name" name="name" class="form-control" />
+                            <label class="alert" for="lblName" id="lblName" name="lblName">solo letras y espacios-</label>
                           </div>
                         </div>
+                        
 
-                        <div class="d-flex flex-row align-items-center mb-2">
+                        <div class="d-flex flex-row align-items-center mb-0">
                           <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
-                              <label class="form-label" for="urname">Surname</label>
-                            <input type="text" id="surname" class="form-control" />
+                              <label class="form-label" for="surname">Surname</label>
+                            <input type="text" id="surname" name="surname" class="form-control" />
+                            <label class="alert" for="lblSurname" id="lblSurname" name="lblSurname">solo letras y espacios-</label>
                           </div>
                         </div>
 
-                        <div class="d-flex flex-row align-items-center mb-2">
+                        <div class="d-flex flex-row align-items-center mb-0">
                           <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                               <label class="form-label" for="identification">Identification</label>
-                            <input type="text" id="identification" class="form-control" />
+                            <input type="text" id="identification" name="identification" class="form-control" />
+                            <label class="alert" for="lblIdentification" id="lblIdentification" name="lblIdentification">solo números de 7 a 12 digitos-</label>
                           </div>
                         </div>
       
-                        <div class="d-flex flex-row align-items-center mb-2">
+                        <div class="d-flex flex-row align-items-center mb-0">
                           <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                               <label class="form-label" for="form3Example3c">Email</label>
-                            <input type="email" id="form3Example3c" class="form-control" />
+                            <input type="email" name="email" id="email" class="form-control" />
+                            <label class="alert" for="lblEmail" id="lblEmail" name="lblEmail">Aca debe ir un Email- no puede ser vacio-</label>
                           </div>
                         </div>
       
-                        <div class="d-flex flex-row align-items-center mb-2">
+                        <div class="d-flex flex-row align-items-center mb-0">
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                               <label class="form-label" for="address">Address</label>
-                            <input type="text" id="address" class="form-control" />
+                            <input type="text" name="address" id="address"  class="form-control" />
+                            <label class="alert" for="lblAdress" name="lblAddress" id="lblAddress">Ingresa una direccion valida</label>
                           </div>
                         </div>
       
-                        <div class="d-flex flex-row align-items-center mb-2">
+                        <div class="d-flex flex-row align-items-center mb-0">
                           <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
                               <label class="form-label" for="phone">Phone</label>
-                            <input type="password" id="phone" class="form-control" />
+                            <input type="text" id="phone" name="phone" class="form-control" />
+                            <label class="alert" for="lblPhone" id="lblPhone" name="lblPhone">Solo números de 7 a 11 digitos</label>
                           </div>
                         </div>
       
-                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                          <button type="button" class="btn btn-primary btn-lg">Save</button>
+                        <div class="d-flex justify-content-between mx-4 mb-3 mb-lg-4">
+                          <button id="guardar" type="button" class="btn btn-primary btn-lg bg-success">Save</button>
+                          <a href="/users" class="btn btn-primary btn-lg bg-success">My Users</a>
                         </div>
       
                       </form>
@@ -71,7 +82,7 @@
                     </div>
                     <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
       
-                      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                      <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-acceder-al-perfil-movil_114360-83.jpg?w=500"
                         class="img-fluid" alt="Sample image">
       
                     </div>
@@ -80,6 +91,7 @@
               </div>
             </div>
           </div>
+          <script type="text/javascript" src="/js/userValidation.js"></script>
         </div>
 <!-- FOOTER -->
 <%- include('../../partials/footer/footer.ejs') %> 

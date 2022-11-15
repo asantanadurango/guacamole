@@ -3,11 +3,11 @@ const inpName = document.getElementById('name')
 
 const inpPrice_1 = document.getElementById('price_1')
 const inpWeight_1 = document.getElementById('weight_1')
-const inpRef_1 = document.getElementById('ref_1')
+
 
 const inpPrice_2 = document.getElementById('price_2')
 const inpWeight_2 = document.getElementById('weight_2')
-const inpRef_2 = document.getElementById('ref_2')
+
 
 const inpDescription = document.getElementById('description');
 const btnSave = document.getElementById('save');
@@ -18,6 +18,11 @@ const clearForm = () => inputs.forEach(inp => inp.value='')
 
 btnSave.addEventListener('click', (e) => {
     e.preventDefault()
+
+function firstTwo(name){
+    const arrayName = name.split(' ')
+    const arregloPrimeras = arrayName.map((e)=>e.)
+}
  
 const body = {
     name:inpName.value,

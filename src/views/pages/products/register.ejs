@@ -1,88 +1,104 @@
 <!-- HEAD -->
+<link href="/assets/styles.css" rel="stylesheet" type="text/css"/>
 <%- include('../../partials/head/head.ejs') %> 
 <!-- NAVBAR -->
 <%- include('../../partials/navbar/navbar.ejs') %> 
 
-
+<p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+  REGISTER NEW PRODUCT
+</p>
 <div class="container">
-  <h1>Register product</h1>
   <div class="row d-flex justify-content-center align-items-center">
     <div class="col-lg-12 col-xl-11">
       <div class="card text-black" style="border-radius: 25px;">
         <div class="card-body">
           <div class="row justify-content-center">
             <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+              <form class="mx-1 mx-md-4" id="formularioProductos">
 
-              <form class="mx-1 mx-md-4">
-
-                <div class="d-flex flex-row align-items-center mb-2">
+                <div class="d-flex flex-row align-items-center mb-0">
                   <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                   <div class="form-outline flex-fill mb-0">
                       <label class="form-label" for="name">Name</label>
-                    <input type="text" id="name" class="form-control" />
+                    <input type="text" name="name" id="name" class="form-control" />
+                    <label class="alert" for="lblName" name="lblName" id="lblName"
+                    >Solo letras y espacios</label>
                   </div>
                 </div>
 
-                <div class="d-flex flex-row align-items-center mb-2">
+                <div class="d-flex flex-row align-items-center mb-0">
                   <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                   <div class="form-outline flex-fill mb-0">
                       <label class="form-label" for="description">Description</label>
-                    <input type="text" id="description" class="form-control" />
+                    <input type="text" id="description" name="description" class="form-control" />
+                    <label class="alert" for="lblDescription" name="lblDescription" id="lblDescription"
+                    >Solo letras y espacios</label>
                   </div>
                 </div>
-
-                <div class="d-flex flex-row align-items-center mb-2">
-                  <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                  <div class="form-outline flex-fill mb-0">
-                      <label class="form-label" for="price_1">Price #1</label>
-                    <input type="text" id="price_1" class="form-control" />
-                  </div>
-                </div>
-
-                <div class="d-flex flex-row align-items-center mb-2">
-                  <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                  <div class="form-outline flex-fill mb-0">
-                      <label class="form-label" for="weight_1">Weight #1</label>
-                    <input type="text" id="weight_1" class="form-control" />
-                  </div>
-                </div>
-
-                <div class="d-flex flex-row align-items-center mb-2">
-                  <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                  <div class="form-outline flex-fill mb-0">
-                      <label class="form-label" for="ref_1">Ref #1</label>
-                    <input type="text" id="ref_1" class="form-control" />
-                  </div>
-                </div>
-
+                <p class="text-center h4  mb-3 mx-1 mx-md-4 mt-3">Ref#1</p>
                 <hr>
 
-                <div class="d-flex flex-row align-items-center mb-2">
+                <div class="d-flex flex-row align-items-center mb-0">
                   <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                   <div class="form-outline flex-fill mb-0">
-                      <label class="form-label" for="price_2">Price #2</label>
-                    <input type="text" id="price_2" class="form-control" />
+                      <label class="form-label" for="price_1">Price</label>
+                    <input type="text" name="price_1" id="price_1" class="form-control" />
+                    <label
+                    class="alert"
+                    for="lblPrice_1"
+                    id="lblPrice_1"
+                    name="lblPrice_1"
+                    >Solo números de 0 al 99'999.999</label>
                   </div>
                 </div>
 
-                <div class="d-flex flex-row align-items-center mb-2">
+                <div class="d-flex flex-row align-items-center mb-0">
                   <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                   <div class="form-outline flex-fill mb-0">
-                      <label class="form-label" for="weight_2">Weight #2</label>
-                    <input type="text" id="weight_2" class="form-control" />
+                      <label class="form-label" for="weight_1">Weight</label>
+                    <input type="text" name="weight_1" id="weight_1" class="form-control" />
+                    <label
+                    class="alert"
+                    for="lblWeight_1"
+                    id="lblWeight_1"
+                    name="lblWeight_1"
+                    >Solo números de 0 al 99'999.999</label >
                   </div>
                 </div>
+                <p class="text-center h4  mb-3 mx-1 mx-md-4 mt-3">Ref#2</p>
+                <hr>
 
-                <div class="d-flex flex-row align-items-center mb-2">
-                  <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                <div class="d-flex flex-row align-items-center mb-0">
+                  <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                   <div class="form-outline flex-fill mb-0">
-                      <label class="form-label" for="ref_2">Ref #2</label>
-                    <input type="text" id="ref_2" class="form-control" />
+                      <label class="form-label" for="price_2">Price</label>
+                    <input type="text" name="price_2" id="price_2" class="form-control" />
+                    <label
+                    class="alert"
+                    for="lblPrice_2"
+                    id="lblPrice_2"
+                    name="lblPrice_2"
+                    >Solo números de 0 al 99'999.999</label>
                   </div>
                 </div>
 
-                <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                  <button id="save" class="btn btn-primary btn-lg">Save</button>
+                <div class="d-flex flex-row align-items-center mb-0">
+                  <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                  <div class="form-outline flex-fill mb-0">
+                      <label class="form-label" for="weight_2">Weight</label>
+                    <input type="text" id="weight_2" name="weight_2" class="form-control" />
+                    <label
+                    class="alert"
+                    for="lblWeight_2"
+                    id="lblWeight_2"
+                    name="lblWeight_2"
+                    >Solo números de 0 al 99'999.999</label>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-between mx-4 mb-3 mb-lg-4">
+                  <button id="save" class="btn btn-primary btn-lg bg-success">Save</button>
+                  <a href="/products" class="btn btn-primary btn-lg bg-success">My products</a>
                 </div>
                 
               </form>
@@ -90,7 +106,7 @@
             </div>
             <div class="col-md-10 col-lg-6 col-xl-7 d-flex justify-content-center align-items-center order-1 order-lg-2">
 
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJkz_ATJa8ItwdtDhab7NE-xBAqlisJDCnng&usqp=CAU"
+              <img src="https://img.freepik.com/vector-gratis/cocina-mexicana-platos-bocadillos-bebidas-iconos-planos-establecidos_1284-11668.jpg?w=826&t=st=1668207454~exp=1668208054~hmac=1c4554764c23f436eaab30f67e22f2b3dcf3cc1fefad60cacce2c8ce5e3ef977"
                 class="img-fluid" alt="Sample image">
 
             </div>
@@ -99,6 +115,7 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript" src="/js/productValidation.js"></script>
 </div>
-<script src="/js/products.js"></script>
+
 <%- include('../../partials/footer/footer.ejs') %> 
