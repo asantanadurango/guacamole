@@ -12,31 +12,28 @@ const inpWeight_2 = document.getElementById('weight_2')
 const inpDescription = document.getElementById('description');
 const btnSave = document.getElementById('save');
 
-const inputs = Array.from(document.querySelectorAll('input'))
+const inputsList = Array.from(document.querySelectorAll('input'))
 
-const clearForm = () => inputs.forEach(inp => inp.value='')
+const clearForm = () => inputsList.forEach(inp => inp.value='')
 
 btnSave.addEventListener('click', (e) => {
+    console.log('e');
     e.preventDefault()
 
-function firstTwo(name){
-    const arrayName = name.split(' ')
-    const arregloPrimeras = arrayName.map((e)=>e.charAt(0))
-    return arregloPrimeras
-}
-
-const generateRef = (name, price) => {
-    const splitedName = name.split(' ');
-    const initalToUppercase = splitedName.map(word => word.at(0).toUpperCase()).join('');
-    rerurn `${initalToUppercase}-${price}`
-};
+    const generateRef = (name, price) => {
+        const splitedName = name.split(' ');
+        const initalToUppercase = splitedName.map(word => word.at(0).toUpperCase()).join('');
+        return `${initalToUppercase}-${price}`
+    };
  
+
+    console.log(generateRef(inpName.value, inpPrice_1.value));
 const body = {
     name:inpName.value,
     description: inpDescription.value,
     presentations: [
         {
-            price:inpPrice_1.value,    
+            price:inpPrice_1.value,
             weight:inpWeight_1.value,    
             ref:generateRef(inpName.value, inpPrice_1.value)
         },

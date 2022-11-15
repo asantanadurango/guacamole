@@ -1,6 +1,6 @@
 import { UserModel } from '../models/userModel.js'
 export const register = async (req, res) => {
-    
+    console.log(req.body);
     let {
         name,
         surname,
@@ -13,13 +13,14 @@ export const register = async (req, res) => {
 
     name = name.toLowerCase()
     surname = surname.toLowerCase()
-    identification = identification.toLowerCase()
     email = email.toLowerCase()
     address = address.toLowerCase()
-    phone = phone.toLowerCase()
     
     new UserModel({ name, surname, identification, email, address, phone,}).save((error, data) => {
-        if (error) return res.json({error:error})
+        if (error) {
+            console.log(error);
+            return res.json
+        }({error:error})
         res.json({res:data})
     })
 };

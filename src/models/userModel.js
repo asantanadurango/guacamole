@@ -28,7 +28,7 @@ const UserSchema = new Schema({
         required: true,
     },
     
-}, {_id:false});
+}, {versionKey:false});
 
 
 export const UserModel = mongoose.model('users', UserSchema)
