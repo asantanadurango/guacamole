@@ -79,26 +79,3 @@ inputs.forEach((input) => {
   input.addEventListener("keyup", validarFormulario);
   input.addEventListener("blur", validarFormulario);
 });
-
-formulario.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  let name = document.querySelector("#name");
-  let lastName = document.querySelector("#lastName");
-  let identification = document.querySelector("#identification");
-  let email = document.querySelector("#email");
-  let phone = document.querySelector("#phone");
-
-  const bodyResponse = {
-    data: "Holaaaaaa",
-  };
-
-  fetch("http://localhost:3000/users/create", {
-    method: "POST",
-    body: JSON.stringify(bodyResponse),
-    headers: { "Content-Type": "application/json" },
-  })
-    .then((res) => res.json())
-    .then((res) => console.log(res))
-    .catch(console.log);
-});

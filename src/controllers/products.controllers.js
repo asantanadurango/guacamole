@@ -10,7 +10,7 @@ export const register = async (req, res) => {
     name = name.toLowerCase()
     description = description.toLowerCase()
     presentations = presentations.map(({price, weight, ref}) => {
-        return {price: price.toLowerCase(), weight: weight.toLowerCase(), ref: ref.toLowerCase()}
+        return {price: price.toLowerCase(), weight: weight.toLowerCase(), ref}
     })
     
     new ProductModel({ name, description, presentations }).save((error, data) => {

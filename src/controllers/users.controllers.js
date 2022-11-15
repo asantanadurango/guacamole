@@ -19,8 +19,8 @@ export const register = async (req, res) => {
     new UserModel({ name, surname, identification, email, address, phone,}).save((error, data) => {
         if (error) {
             console.log(error);
-            return res.json
-        }({error:error})
+            return res.json({error:error})
+        }
         res.json({res:data})
     })
 };

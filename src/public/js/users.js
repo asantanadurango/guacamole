@@ -36,7 +36,7 @@ const body = {
         body: JSON.stringify(body)
     })
         .then(res => res.json())
-        .then(console.log)
+        .then(()=>alert('Usuario registrado con exito'))
         .catch(err => console.log(err));
     clearForm()
     

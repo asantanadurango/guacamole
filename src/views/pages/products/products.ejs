@@ -4,7 +4,28 @@
 <%- include('../../partials/navbar/navbar.ejs') %> 
 
 
-<div class="container">
-    <h1>Aqui va la lista de products</h1>
-</div>
+<main class="container">
+    <h1><small><%= docTitle %> :</small></h1>
+    <br>
+    <ul>
+        <% products.forEach(({name, description, presentations}) => { %>
+            <h3> <strong>Name : <%= name %></strong> </h3>
+            <h5>Description : <%= description %></h5>
+            <% presentations.forEach(function({price, weight, ref}) { %>
+            <ul class='list-group mx-4'>
+                 <li class="list-group-item-warning">
+                    <h6 class="mx-2">Price : <%= price%> </h6>
+                </li>
+                <li class="list-group-item-warning">
+                    <h6 class="mx-2">Peso : <%= weight%> </h6>
+                </li>
+                <li class="list-group-item-warning">
+                    <h6 class="mx-2">Ref : <%= ref%> </h6>
+                </li>
+            </ul>
+            <br>
+         <% }); %> 
+         <% }); %> 
+    </ul>
+</main>
 <%- include('../../partials/footer/footer.ejs') %> 

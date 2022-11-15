@@ -51,8 +51,8 @@ const body = {
         body: JSON.stringify(body)
     })
         .then(res => res.json())
-        .then(console.log)
-        .catch(err => console.log(err));
+        .then(()=>alert('Producto registrado con exito'))
+        .catch(err => console.log(err))
     clearForm()
     
     

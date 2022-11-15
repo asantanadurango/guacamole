@@ -4,7 +4,18 @@
 <%- include('../../partials/navbar/navbar.ejs') %> 
 
 
-<div class="container">
-    <h1>Aqui va la lista de usuarios</h1>
-</div>
+<main class="container">
+    <h1><small><%= docTitle %> :</small></h1>
+    <ul class='list-group '></ul>
+        <% users.forEach((user)=> {  %>
+            <% Object.entries(user).forEach(([key, value])=> {%>
+                <li class="list-group-item-warning mx-3">
+                    <%= key %> : <%= value %>
+                </li>
+            <% }); %> 
+            <hr>
+        <% }); %> 
+    </ul>
+</main>
 <%- include('../../partials/footer/footer.ejs') %> 
+        
