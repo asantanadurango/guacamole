@@ -13,9 +13,9 @@ const inpPhone = document.getElementById('phone');
 
 const btnSaveUser = document.getElementById('guardar');
 
-const inputs = Array.from(document.querySelectorAll('input'))
+const inputsUserRegister = Array.from(document.querySelectorAll('input'))
 
-const clearForm = () => inputs.forEach(inp => inp.value='')
+const clearForm = () => inputsUserRegister.forEach(inp => inp.value='')
 
 btnSaveUser.addEventListener('click', (e) => {
     e.preventDefault()
@@ -23,7 +23,7 @@ btnSaveUser.addEventListener('click', (e) => {
 const body = {
     name:inpName.value,
     surname:inpSurname.value,
-    dentification:inpIdentification.value,
+    identification:inpIdentification.value,
     email:inpEmail.value,
     address:inpAddress.value,
     phone:inpPhone.value,

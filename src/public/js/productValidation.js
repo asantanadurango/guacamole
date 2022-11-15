@@ -1,4 +1,4 @@
-const formulario = document.getElementById("formularioProductos");
+// const formulario = document.getElementById("formularioProductos");
 const inputs = document.querySelectorAll("#formularioProductos input");
 
 const expresiones = {
