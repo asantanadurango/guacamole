@@ -21,8 +21,15 @@ btnSave.addEventListener('click', (e) => {
 
 function firstTwo(name){
     const arrayName = name.split(' ')
-    const arregloPrimeras = arrayName.map((e)=>e.)
+    const arregloPrimeras = arrayName.map((e)=>e.charAt(0))
+    return arregloPrimeras
 }
+
+const generateRef = (name, price) => {
+    const splitedName = name.split(' ');
+    const initalToUppercase = splitedName.map(word => word.at(0).toUpperCase()).join('');
+    rerurn `${initalToUppercase}-${price}`
+};
  
 const body = {
     name:inpName.value,
@@ -31,12 +38,12 @@ const body = {
         {
             price:inpPrice_1.value,    
             weight:inpWeight_1.value,    
-            ref:inpRef_1.value,    
+            ref:generateRef(inpName.value, inpPrice_1.value)
         },
         {
             price:inpPrice_2.value,
             weight:inpWeight_2.value,
-            ref:inpRef_2.value,
+            ref:generateRef(inpName.value, inpPrice_2.value)
         }
     ]
 }
