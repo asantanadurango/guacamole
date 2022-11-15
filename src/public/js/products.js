@@ -1,3 +1,4 @@
+//import {verificar} from "productValidation.js";
 console.log('products');
 const inpName = document.getElementById('name')
 
@@ -18,6 +19,7 @@ const clearForm = () => inputsList.forEach(inp => inp.value='')
 
 btnSave.addEventListener('click', (e) => {
     console.log('e');
+    
     e.preventDefault()
 
     const generateRef = (name, price) => {
@@ -45,6 +47,7 @@ const body = {
     ]
 }
 
+//if(verificar){
     fetch('http://localhost:3000/api/products/register', {
         headers: { 'Content-Type': 'application/json' },
         method: 'POST',
@@ -54,6 +57,6 @@ const body = {
         .then(()=>alert('Producto registrado con exito'))
         .catch(err => console.log(err))
     clearForm()
-    
+//}else{()=>alert('Algo salio mal')}
     
 })
