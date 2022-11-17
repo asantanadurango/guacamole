@@ -11,86 +11,86 @@ const expresiones = {
 const campos = {
   name: false,
   surname: false,
-  indentification: false,
+  identification: false,
   email: false,
   address: false,
   phone: false,
 }
+
+
 
 const validarFormulario = (e) => {
   switch (e.target.name) {
     case 'name':
       if (expresiones.name.test(e.target.value)) {
         document.querySelector("#name").classList.remove("border", "border-danger");
-        document.querySelector("#lblName").classList.add("text-danger", "invisible")
+        document.querySelector("#lblName").classList.add("text-danger", "invisible");
         campos['name']=true;
       } else {
         document.querySelector("#name").classList.add("border", "border-danger");
-        document.querySelector("#lblName").classList.remove("invisible")
-        document.querySelector("#lblName").classList.add("text-danger", "visible")
+        document.querySelector("#lblName").classList.remove("invisible");
+        document.querySelector("#lblName").classList.add("text-danger", "visible");
         campos['name']=false;
-        
-        
       }
       break;
     case "surname":
       if (expresiones.name.test(e.target.value)) {
         document.querySelector("#surname").classList.remove("border", "border-danger");
-        document.querySelector("#lblSurname").classList.add("text-danger","invisible")
+        document.querySelector("#lblSurname").classList.add("text-danger","invisible");
         campos['surname']=true;
       } else {
         document.querySelector("#surname").classList.add("border", "border-danger");
-        document.querySelector("#lblSurname").classList.remove("invisible")
-        document.querySelector("#lblSurname").classList.add("text-danger", "visible")
+        document.querySelector("#lblSurname").classList.remove("invisible");
+        document.querySelector("#lblSurname").classList.add("text-danger", "visible");
         campos['surname']=false;
       }
       break;
     case "identification":
       if (expresiones.indentification.test(e.target.value)) {
         document.querySelector("#identification").classList.remove("border", "border-danger");
-        document.querySelector("#lblIdentification").classList.add("text-danger","invisible")
+        document.querySelector("#lblIdentification").classList.add("text-danger","invisible");
         campos['identification']=true;  
           
       } else {
         document.querySelector("#identification").classList.add("border", "border-danger");
-        document.querySelector("#lblIdentification").classList.remove("invisible")
-        document.querySelector("#lblIdentification").classList.add("text-danger", "visible")
+        document.querySelector("#lblIdentification").classList.remove("invisible");
+        document.querySelector("#lblIdentification").classList.add("text-danger", "visible");
         campos['identification']=false;
       }
       break;
     case "email":
       if (expresiones.email.test(e.target.value)) {
         document.querySelector("#email").classList.remove("border", "border-danger");
-        document.querySelector("#lblEmail").classList.add("text-danger","invisible")
+        document.querySelector("#lblEmail").classList.add("text-danger","invisible");
         campos['email']=true;
       } else {
         document.querySelector("#email").classList.add("border", "border-danger");
-        document.querySelector("#lblEmail").classList.remove("invisible")
-        document.querySelector("#lblEmail").classList.add("text-danger", "visible")
+        document.querySelector("#lblEmail").classList.remove("invisible");
+        document.querySelector("#lblEmail").classList.add("text-danger", "visible");
         campos['email']=false;
       }
       break;
       case "address":
       if (expresiones.address.test(e.target.value)) {
         document.querySelector("#address").classList.remove("border", "border-danger");
-        document.querySelector("#lblAddress").classList.add("text-danger","invisible")
+        document.querySelector("#lblAddress").classList.add("text-danger","invisible");
         campos['address']=true;
       } else {
         document.querySelector("#address").classList.add("border", "border-danger");
-        document.querySelector("#lblAddress").classList.remove("invisible")
-        document.querySelector("#lblAddress").classList.add("text-danger", "visible")
+        document.querySelector("#lblAddress").classList.remove("invisible");
+        document.querySelector("#lblAddress").classList.add("text-danger", "visible");
         campos['address']=false;
       }
       break;
     case "phone":
       if (expresiones.phone.test(e.target.value)) {
         document.querySelector("#phone").classList.remove("border", "border-danger");
-        document.querySelector("#lblPhone").classList.add("text-danger","invisible")
+        document.querySelector("#lblPhone").classList.add("text-danger","invisible");
         campos['phone']=true;
       } else {
         document.querySelector("#phone").classList.add("border", "border-danger");
-        document.querySelector("#lblPhone").classList.remove("invisible")
-        document.querySelector("#lblPhone").classList.add("text-danger", "visible")
+        document.querySelector("#lblPhone").classList.remove("invisible");
+        document.querySelector("#lblPhone").classList.add("text-danger", ";visible")
         campos['phone']=false;
       }
       break;
@@ -102,7 +102,47 @@ inputs.forEach((input) => {
   input.addEventListener("blur", validarFormulario);
 });
 
-function verificarU() {
-  if(campos.name && campos.surname && campos.indentification && campos.email && campos.address && campos.phone)
-  {return true}else{ return false}
+const inpName = document.getElementById('name');
+
+const inpSurname = document.getElementById('surname');
+
+const inpIdentification = document.getElementById('identification');
+
+const  inpEmail= document.getElementById('email');
+
+const inpAddress = document.getElementById('address');
+
+const inpPhone = document.getElementById('phone');
+
+const btnSaveUser = document.getElementById('guardar');
+
+const inputsUserRegister = Array.from(document.querySelectorAll('input'));
+
+const clearForm = () => inputsUserRegister.forEach(inp => inp.value='');
+
+btnSaveUser.addEventListener('click', (e) => {
+    e.preventDefault()
+    const validator = campos.name && campos.surname && campos.identification && campos.email && campos.address && campos.phone;
+ if(validator){
+const body = {
+    name:inpName.value,
+    surname:inpSurname.value,
+    identification:inpIdentification.value,
+    email:inpEmail.value,
+    address:inpAddress.value,
+    phone:inpPhone.value,
+  
 }
+
+    fetch('http://localhost:3000/api/users/register', {
+        headers: { 'Content-Type': 'application/json' },
+        method: 'POST',
+        body: JSON.stringify(body)
+    })
+        .then(res => res.json())
+        .then(()=>alert('Usuario registrado con exito'))
+        .catch(err => console.log(err));
+    clearForm()
+  }else{alert("completa todos los campos Correctamente")}
+    
+})

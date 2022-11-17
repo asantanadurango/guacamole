@@ -107,7 +107,7 @@ const validarFormulario = (e) => {
         document
           .querySelector("#lblWeight_1")
           .classList.add("text-danger", "visible");
-          campos['weight_2']=false;
+          campos['weight_1']=false;
       }
       break;
     case "price_2":
@@ -163,10 +163,71 @@ inputs.forEach((input) => {
   input.addEventListener("blur", validarFormulario);
 });
 
+const inpName = document.getElementById('name')
 
- function verificarP() {
-      if(campos.name && campos.surname && campos.indentification && campos.email && campos.address && campos.phone)
-      {return true}else{ return false}
+const inpPrice_1 = document.getElementById('price_1')
+const inpWeight_1 = document.getElementById('weight_1')
+
+
+const inpPrice_2 = document.getElementById('price_2')
+const inpWeight_2 = document.getElementById('weight_2')
+
+
+const inpDescription = document.getElementById('description');
+const btnSave = document.getElementById('save');
+
+const inputsList = Array.from(document.querySelectorAll('input'))
+
+const clearForm = () => inputsList.forEach(inp => inp.value='')
+
+btnSave.addEventListener('click', (e) => {
+    console.log('e');
+    
+    e.preventDefault()
+    
+    const validation = campos.name && campos.description && campos.price_1 && campos.price_2 && campos.weight_1 && campos.weight_2
+    console.log(validation)
+    if(validation){
+    const generateRef = (name, price) => {
+        const splitedName = name.split(' ');
+        const initalToUppercase = splitedName.map(word => word.at(0).toUpperCase()).join('');
+        return `${initalToUppercase}-${price}`
+    };
+ 
+
+    console.log(generateRef(inpName.value, inpPrice_1.value));
+const body = {
+    name:inpName.value,
+    description: inpDescription.value,
+    presentations: [
+        {
+            price:inpPrice_1.value,
+            weight:inpWeight_1.value,    
+            ref:generateRef(inpName.value, inpPrice_1.value)
+        },
+        {
+            price:inpPrice_2.value,
+            weight:inpWeight_2.value,
+            ref:generateRef(inpName.value, inpPrice_2.value)
+        }
+    ]
 }
+
+    fetch('http://localhost:3000/api/products/register', {
+        headers: { 'Content-Type': 'application/json' },
+        method: 'POST',
+        body: JSON.stringify(body)
+    })
+        .then(res => res.json())
+        .then(()=>alert('Producto registrado con exito'))
+        .catch(err => console.log(err))
+    clearForm()
+  }else{
+    alert("completa todos los campos correctamente")
+  }
+})
+
+
+
 
 

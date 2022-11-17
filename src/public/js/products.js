@@ -1,5 +1,5 @@
 //import {verificar} from "productValidation.js";
-console.log('products');
+/*console.log('products');
 const inpName = document.getElementById('name')
 
 const inpPrice_1 = document.getElementById('price_1')
@@ -59,4 +59,4 @@ const body = {
     clearForm()
 //}else{()=>alert('Algo salio mal')}
     
-})
+})*/

@@ -1,4 +1,4 @@
-console.log('users');
+/*console.log('users');
 const inpName = document.getElementById('name')
 
 const inpSurname = document.getElementById('surname')
@@ -41,4 +41,4 @@ const body = {
     clearForm()
     
     
-})
+})*/
